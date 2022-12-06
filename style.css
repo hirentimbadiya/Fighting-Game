@@ -32,7 +32,6 @@ body {
   align-items: center;
   height: 300px;
   width: 300px;
-  /*   background: red; */
 }
 
 #p1Name {
@@ -55,7 +54,6 @@ body {
   align-items: center;
   height: 300px;
   width: 300px;
-  /*   background: red; */
 }
 
 #p2Name {
@@ -78,7 +76,6 @@ body {
   justify-content: space-around;
   height: 40px;
   width: 100px;
-  /*   background: blue; */
 }
 
 .HealDiv {
@@ -87,7 +84,6 @@ body {
   justify-content: space-around;
   height: 40px;
   width: 100px;
-  /*   background: yellow; */
 }
 
 #attack {
@@ -118,7 +114,6 @@ body {
   height: 50px;
   width: 120px;
   border-radius: 20px;
-  /*   border:none; */
   background: #02cf02;
   outline: none;
   color: white;
@@ -135,7 +130,6 @@ body {
   height: 50px;
   width: 100px;
   border-radius: 20px;
-  /*   border:none; */
   background: #ff8800;
   outline: none;
   color: white;
