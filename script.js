@@ -166,7 +166,3 @@ document.addEventListener('keydown', function (e) {
      document.getElementById("p2heal").play();
     }
 });
-
-
-
-
