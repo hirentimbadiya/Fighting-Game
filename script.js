@@ -42,7 +42,6 @@ class Player {
     }
     // ** Heal the player for random number from  1 to 5 **
     heal(player) {
-
         // Get random number between 1 - 5 and store that in hpAmount
         let heal = Math.ceil(Math.random() * 5);
         // Add hpAmount to players health
@@ -93,18 +92,18 @@ class Game {
     // ** Simulates the whole match untill one player runs out of health **
     play(p1, p2) {
         // Reset to make sure player health is back to full before starting
-        this.reset(p1 , p2);
+        this.reset(p1, p2);
         // Make sure the players take turns untill isOver is TRUE
         while (!this.isOver) {
             //Make sure both players get strike() and heal() once each loop
-            p1.strike(p1 , p2 , p1.attackDmg);
+            p1.strike(p1, p2, p1.attackDmg);
             p2.heal(p2);
-            p2.strike(p2 , p1 , p2.attackDmg);
+            p2.strike(p2, p1, p2.attackDmg);
             p1.heal(p1);
-            
+
         }
         // Once isOver is TRUE run the declareWinner() method  
-        return this.declareWinner(this.isOver , p1 , p2);   
+        return this.declareWinner(this.isOver, p1, p2);
     }
 
 }
@@ -112,24 +111,22 @@ class Game {
 // ** Create 2 players using the player class **
 const player1 = new Player('Hiren', 100, 10);
 const player2 = new Player('Hiru', 100, 10);
-const game = new Game();
 
 // ** Save original Player Data into a variable in order to reset **
 let p1 = player1;
 let p2 = player2;
 
-updateGame(p1, p2, game.isOver);
 // ** Create the game object from the Game class **
+const game = new Game();
 
 // ** Intialize the game by calling updateGame() **
-
+updateGame(p1, p2, game.isOver);
 
 // ** Save intial isOver from the game object inside this variable **
 let gameState = this.isOver;
 
-
 // ** Add a click listener to the simulate button that runs the play() method on click and pass in the players **
-playButton.onclick = () => resultDiv.innerText = game.play(p1 ,p2);
+playButton.onclick = () => resultDiv.innerText = game.play(p1, p2);
 // Add functionality where players can press a button to attack OR heal
 
 // ** Player 1 Controls **
@@ -162,7 +159,7 @@ document.addEventListener('keydown', function (e) {
     // if you press l AND the player health is greater than 0 AND isOver is still false then heal()
     if (e.key == 'l' && p1.health > 0 && game.isOver == false) {
         p2.heal(p2);
-    // After healing then play heal sound
-     document.getElementById("p2heal").play();
+        // After healing then play heal sound
+        document.getElementById("p2heal").play();
     }
 });
