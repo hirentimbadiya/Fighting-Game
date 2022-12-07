@@ -65,7 +65,7 @@ class Game {
     declareWinner(isOver, p1, p2) {
 
         // Create a message variable that will hold a message based on the condition
-        let msg;
+        let msg = "TIE";
         // If isOver is true AND p1 health is <= 0 then update message variable  to 'p1 WINS!'
         if (isOver && p1.health <= 0) {
             msg = `${p2.name} wins.`
@@ -97,10 +97,9 @@ class Game {
         while (!this.isOver) {
             //Make sure both players get strike() and heal() once each loop
             p1.strike(p1, p2, p1.attackDmg);
-            p2.heal(p2);
             p2.strike(p2, p1, p2.attackDmg);
+            p2.heal(p2);
             p1.heal(p1);
-
         }
         // Once isOver is TRUE run the declareWinner() method  
         return this.declareWinner(this.isOver, p1, p2);
@@ -110,7 +109,7 @@ class Game {
 
 // ** Create 2 players using the player class **
 const player1 = new Player('Hiren', 100, 10);
-const player2 = new Player('Hiru', 100, 10);
+const player2 = new Player('Mukund', 100, 10);
 
 // ** Save original Player Data into a variable in order to reset **
 let p1 = player1;
