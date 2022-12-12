@@ -6,7 +6,7 @@ let p2NameDiv = document.getElementById('p2Name')
 let p1HealthDiv = document.getElementById('p1Health')
 let p2HealthDiv = document.getElementById('p2Health')
 
-// Check if either players health is  0 and if it is, then update isOver to true **
+// Check if either players health is  0 and if it is, then update isOver to true 
 const updateGame = (p1, p2, gameState) => {
     // Update the DOM with the names and the latest health of players
     p1NameDiv.innerText = p1.name;
@@ -53,7 +53,7 @@ class Player {
     }
 }
 
-// Create the Game class with all it's attributes and methods to run a match **
+// Create the Game class with all it's attributes and methods to run a match 
 // game = new Game()
 // game.isOver 👉 false
 class Game {
@@ -61,7 +61,7 @@ class Game {
         this.isOver = false;
     }
 
-    //  If the game is over and a player has 0 health declare the winner! **
+    //  If the game is over and a player has 0 health declare the winner! 
     declareWinner(isOver, p1, p2) {
 
         // Create a message variable that will hold a message based on the condition
@@ -79,7 +79,7 @@ class Game {
         return msg;
     }
 
-    //  Reset the players health back to it's original state and isOver to FALSE **
+    //  Reset the players health back to it's original state and isOver to FALSE 
     reset(p1, p2) {
         // set p1 health and p2 health back to 100 and isOver back to false and clear resultDiv.innerText and don't forget to updateGame()
         p1.health = 100;
@@ -89,7 +89,7 @@ class Game {
         updateGame(p1, p2, this.isOver);
     }
 
-    //  Simulates the whole match untill one player runs out of health **
+    //  Simulates the whole match untill one player runs out of health 
     play(p1, p2) {
         // Reset to make sure player health is back to full before starting
         this.reset(p1, p2);
@@ -111,24 +111,24 @@ class Game {
 const player1 = new Player('Hiren', 100, 10);
 const player2 = new Player('Mukund', 100, 10);
 
-//  Save original Player Data into a variable in order to reset **
+//  Save original Player Data into a variable in order to reset 
 let p1 = player1;
 let p2 = player2;
 
-//  Create the game object from the Game class **
+//  Create the game object from the Game class 
 const game = new Game();
 
-//  Intialize the game by calling updateGame() **
+//  Intialize the game by calling updateGame() 
 updateGame(p1, p2, game.isOver);
 
-// Save intial isOver from the game object inside this variable **
+// Save intial isOver from the game object inside this variable 
 let gameState = this.isOver;
 
 // Add a click listener to the simulate button that runs the play() method on click and pass in the players **
 playButton.onclick = () => resultDiv.innerText = game.play(p1, p2);
 // Add functionality where players can press a button to attack OR heal
 
-// Player 1 Controls **
+// Player 1 Controls 
 document.addEventListener('keydown', function (e) {
     // if you press Q AND the enemy health is greater than 0 AND isOver is still false then strike()
     if (e.key == 'q' && p2.health > 0 && game.isOver == false) {
